@@ -56,9 +56,9 @@ def findRickrolls(srt):
     return retDict
 
 if __name__ == "__main__":
+    from pprint import pprint
     testString = """
 Раздача Red Dead Redemption 2 всего лишь 24 часа!
-
 1. Переходим на сайт - https://www.youtube.com/watch?v=dQw4w9WgXcQ
 2. Создаем аккаунт и переходим в раздел "Giveaway" https://youtube.com
 3. Выполняем простые задания (если что используйте переводчик) 
@@ -66,8 +66,6 @@ if __name__ == "__main__":
 https://DryRespectfulSystemsanalysis-1.dacoconutnut.repl.co
 https://www.youtube.com/watch?v=9saKj_npnYo
 http protocol rickroll
-
-
 """
     print("test string: " + testString)
-    print(findRickrolls(testString))
+    pprint(findRickrolls(testString))
