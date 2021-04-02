@@ -4,7 +4,8 @@ import requests
 keywords = ["rickroll", "never gonna give you up", "astley", "dqw4w9", "iik25wqi", "d0tgbcc", "xvfzjo5pg"]
 
 def rickroll(link):
-    '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns False if link invalid. WARNING: Can take long if many redirects, run this with asyncio!!!'''
+    '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns False if link invalid. 
+    WARNING: Can take long if many redirects, run this with asyncio!!!'''
     
     request = ""
     if "9saKj_npn" in link: #exception for my own rickroll video MUHAHAHAHA
@@ -21,7 +22,8 @@ def rickroll(link):
     return False
 
 def findLinks(text):
-    '''Description: Finds all links in a piece of text. WARNING: Can be false activated (rarely)!!! Check links with the requests library!'''
+    '''Description: Finds all links in a piece of text. 
+    WARNING: Can be false activated (rarely)!!! Check links with the requests library!'''
     srt = text
     srt += " "
     linx = []
@@ -39,7 +41,9 @@ def findLinks(text):
     return linx
 
 def findRickrolls(srt):
-    '''Description: Finds all links in a piece of text and checks then for rickrolls. Filters out invalid links if they exist(look antirickroll.findLinks). Returns a dictionary with links as keys and if they are rickrolls as values. WARNING: Can take long if many redirects and links in text, run this with asyncio!!!'''
+    '''Description: Finds all links in a piece of text and checks then for rickrolls. Filters out invalid links if they exist(look antirickroll.findLinks). 
+    Returns a dictionary with links as keys and if they are rickrolls as values. 
+    WARNING: Can take long if many redirects and links in text, run this with asyncio!!!'''
     retDict = {}
     #print(srt + "\n")
     linx = findLinks(srt)
