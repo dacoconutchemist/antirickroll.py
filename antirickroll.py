@@ -5,7 +5,7 @@ keywords = ["rickroll", "never gonna give you up", "astley", "dqw4w9", "iik25wqi
 
 def rickroll(link):
     '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns False if link invalid. 
-    WARNING: Can take long if many redirects, run this with asyncio!!!'''
+    WARNING: Can take long if there are many redirects, run this with asyncio!!!'''
     
     request = ""
     if "9saKj_npn" in link: #exception for my own rickroll video MUHAHAHAHA
@@ -29,8 +29,9 @@ def findLinks(text):
     linx = []
     def shortDaCode(c):
         try:
+            opt1 = srt.split("http")
             for i in range(1, len(srt.split("http"))):
-                appd = srt.split("http")[i].split(c)[0]
+                appd = opt1[i].split(c)[0]
                 if (" " in appd) or ("\n" in appd):
                     continue
                 linx.append("http" + appd)
@@ -43,7 +44,7 @@ def findLinks(text):
 def findRickrolls(srt):
     '''Description: Finds all links in a piece of text and checks then for rickrolls. Filters out invalid links if they exist(look antirickroll.findLinks). 
     Returns a dictionary with links as keys and if they are rickrolls as values. 
-    WARNING: Can take long if many redirects and links in text, run this with asyncio!!!'''
+    WARNING: Can take long if there are many redirects and links in the text, run this with asyncio!!!'''
     retDict = {}
     #print(srt + "\n")
     linx = findLinks(srt)
