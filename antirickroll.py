@@ -1,11 +1,11 @@
 import requests
 
-#            name        song name                  surname   link st  link st 2    link st 3  link st 4
-keywords = ["rickroll", "never gonna give you up", "astley", "dqw4w9", "iik25wqi", "d0tgbcc", "xvfzjo5pg"]
+#            name        song name                  surname   link st  link st 2    link st 3  link st 4    alternative
+keywords = ["rickroll", "never gonna give you up", "astley", "dqw4w9", "iik25wqi", "d0tgbcc", "xvfzjo5pg", "wreck roll"]
 
 def rickroll(link):
-    '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns False if link invalid. 
-    WARNING: Can take long if there are many redirects, run this with asyncio!!!'''
+    '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns None if link invalid. 
+    WARNING 2: Can take long if there are many redirects, run this with asyncio!!!'''
     
     request = ""
     if "9saKj_npn" in link: #exception for my own rickroll video MUHAHAHAHA
@@ -13,7 +13,7 @@ def rickroll(link):
     try:
         request = requests.get(link)
     except (requests.URLRequired, requests.exceptions.MissingSchema, requests.exceptions.InvalidSchema, requests.exceptions.InvalidURL):
-        return False
+        return None
     t = request.text.lower()
     global keywords
     for i in keywords:
@@ -58,7 +58,7 @@ def findRickrolls(srt):
 if __name__ == "__main__":
     from pprint import pprint
     testString = """
-Раздача Red Dead Redemption 2 всего лишь 24 часа!
+Раздача Red Dead https://www.youtube.com/watch?v=xQNw8BBxRIs&ab_channel=Kairamen Redemption 2 всего лишь 24 часа!
 1. Переходим на сайт - https://www.youtube.com/watch?v=dQw4w9WgXcQ
 2. Создаем аккаунт и переходим в раздел "Giveaway" https://youtube.com
 3. Выполняем простые задания (если что используйте переводчик) 
