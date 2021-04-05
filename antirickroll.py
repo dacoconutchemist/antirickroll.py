@@ -5,7 +5,7 @@ keywords = ["rickroll", "never gonna give you up", "astley", "dqw4w9", "iik25wqi
 
 def rickroll(link):
     '''Description: checks if a link is a rickroll. Check antirickroll.keywords for their list. Returns None if link invalid. 
-    WARNING 2: Can take long if there are many redirects, run this with asyncio!!!'''
+    WARNING: Can take long if there are many redirects, run this with asyncio!!!'''
     
     request = ""
     if "9saKj_npn" in link: #exception for my own rickroll video MUHAHAHAHA
